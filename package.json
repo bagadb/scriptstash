@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/bagadb/scriptstash#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "serve-favicon": "^2.5.0"
   }
 }

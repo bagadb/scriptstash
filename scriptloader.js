@@ -7,7 +7,6 @@
 */
 
 const fs = require('fs');
-const { isUndefined } = require('util');
 
 class Scriptloader {
     
@@ -33,6 +32,9 @@ class Scriptloader {
     }
 
     findScript(name){
+        if(name === undefined){
+            return this.scriptMap.get('intro.sh');
+        }
         return this.scriptMap.get(name);
     }
 
@@ -45,4 +47,7 @@ class Scriptloader {
     
 }
 
-module.exports = Scriptloader;
+a = new Scriptloader();
+a.listScripts();
+
+//module.exports = Scriptloader;
