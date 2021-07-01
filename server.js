@@ -46,5 +46,5 @@ api.get("*", (req, res) => {
 })
 
 api.listen(PORT, () => {
-    console.log(`> Listening at ${ port }`);
+    console.log(`> Listening at ${ PORT }`);
 })
