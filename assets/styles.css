@@ -24,8 +24,6 @@ body {
 p {
     background-color: var(--dark1);
     padding: 10px;
-
-    font-size: small;
 }
 
 .bodyclass {

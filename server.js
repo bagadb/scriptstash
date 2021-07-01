@@ -37,8 +37,8 @@ api.get('/list', (req, res) => {
 })
 
 
-api.get('/scriptstash.sh', (req, res) => {
-    res.sendFile(__dirname + "/scriptstash.sh");
+api.get('/scriptsta.sh', (req, res) => {
+    res.sendFile(__dirname + "/scriptsta.sh");
 })
 
 api.get("*", (req, res) => {

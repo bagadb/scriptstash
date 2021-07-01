@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>scriptsta.sh</title>
+        <title>scriptsta.sh[BETA]</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -11,7 +11,7 @@
         <div class="container-fluid bodyclass">
             <div class="row justify-content-center bannerrow">
                 <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 col-xs-12 my-auto text-center">
-                    <h1>ScriptSta.sh</h1>
+                    <h1>ScriptSta.sh[BETA]</h1>
                 </div>
             </div>
             <div class="row justify-content-center contentrow">
@@ -19,7 +19,7 @@
                     > Tired of Downloading and Installing untrusted shell scripts all the time?<br>
                     > No Dependencies! No Installation!<br>
                     > Curated Shell Scripts for ASCII Art, Utilities, Enumeration etc.<br>
-                    > More to come!
+                    > More scripts to come!
                 </div>
             </div>
             <div class="row justify-content-center contentrow">
@@ -31,11 +31,11 @@
                             <p>wget -q -O - "https://scriptstash.herokuapp.com/list"</p>
                         </li>
                         <li><b>run -</b>
-                            <p>wget -q -O - "https://scriptstash.herokuapp.com/s/[ script path ]" | bash -s [param1] [param2] ...</p>
+                            <p>wget -q -O - "https://scriptstash.herokuapp.com/s/[script name]" | bash -s [param1] [param2] ...</p>
                         </li>
                     </ul>
                     > Method 2 - One script to end 'em all!<br>
-                    > Download this ( <a href="/scriptstash.sh">link to readymade script</a> ) <br>
+                    > Download this ( <a href="/scriptsta.sh">link to readymade script</a> ) <br>
                     <ul>
                         <li><b>Add executable permission: </b>
                             <p>chmod +x scriptsta.sh </p>
@@ -49,6 +49,21 @@
                             <p>./scriptsta.sh [script_name] [param1] [param2] ...</p>
                         </li>
                     </ul>
+                    <h4><b>[ Examples ]</b></h4>
+                    <p>
+                        > wget -q -O - "https://scriptstash.herokuapp.com/list"
+                    </p>
+                    <p>
+                        > wget -q -O - "https://scriptstash.herokuapp.com/ninja" | bash
+                    </p>
+                    <p>
+                        > wget -q -O - "https://scriptstash.herokuapp.com/qrify" | bash -s text_to_make_qrcode
+                    <p>
+                        > ./scriptsta.sh linenum
+                    </p>
+                    <p>
+                        > ./scriptsta.sh qrify text_to_make_qrcode
+                    </p>
                 </div>
             </div>
             <div class="row justify-content-center contentrow">
