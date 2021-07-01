@@ -8,7 +8,7 @@ let scriptloader = new Scriptloader();
 
 let api = express();
 
-const port = 5500;
+const PORT = process.env.PORT || 3000;
 
 api.use(favicon(path.join(__dirname, 'assets', 'favicon.png')));
 
@@ -45,6 +45,6 @@ api.get("*", (req, res) => {
     res.sendFile(__dirname + req.path);
 })
 
-api.listen(port, () => {
+api.listen(PORT, () => {
     console.log(`> Listening at ${ port }`);
 })
