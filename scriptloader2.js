@@ -38,11 +38,15 @@ class Scriptloader {
         let result = false;
 
         for(let [key,value] of currentMap.entries()){
+            if( key === name ){
+                console.log("found!");
+                result = currentMap.get(key);
+
+            }
             if (value instanceof Map){
                 result = this.#searchScript(name,value);
             }
-            if( key == name ){
-                result = currentMap.get(key);
+            if(result){
                 return result;
             }
         }
