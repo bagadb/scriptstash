@@ -18,6 +18,14 @@
 
 body {
     background-color: var(--dark3);
+    font-size: large;
+}
+
+p {
+    background-color: var(--dark1);
+    padding: 10px;
+
+    font-size: small;
 }
 
 .bodyclass {
@@ -36,7 +44,6 @@ body {
 }
 
 .contentbody {
+    padding: 1vh;
     background-color: var(--dark2);
-
-    font-size: large;
 }

@@ -1,3 +1,4 @@
+const e = require('express');
 const fs = require('fs');
 const path = require('path');
 
@@ -22,7 +23,8 @@ class Scriptloader {
 
         for(let item of currentFolderData){
             if(item.substring(item.length - 3) === '.sh'){
-                newMap.set(item,"empty");
+                let currentPath = (currentFolder + "/" + item);
+                newMap.set(item,fs.readFileSync(currentPath));
                 this.#scriptNames.push(item);
             }else{
                 newMap.set(item,this.#scanScripts(currentFolder + '/' + item));
@@ -32,21 +34,52 @@ class Scriptloader {
         return newMap;
     }
 
-    findScript(name){
+    #searchScript(name, currentMap){
+        let result = false;
 
+        for(let [key,value] of currentMap.entries()){
+            if (value instanceof Map){
+                result = this.#searchScript(name,value);
+            }
+            if( key == name ){
+                result = currentMap.get(key);
+                return result;
+            }
+        }
+
+        return result;
+
+    };
+
+    getScript(name){
+
+        let myScriptData = this.#searchScript(name,this.#scriptsMap);
+        return myScriptData;
+    }
+
+
+    #mapStringer(myMap){
+        let stringMap = "";
+
+        for( let key of myMap.keys()){
+            
+            if(myMap.get(key) instanceof Map){
+                stringMap += ( " {" + key + ":-" + this.#mapStringer(myMap.get(key)) + "}");
+            }else{
+                stringMap += ( " [" + key + "] ");
+            }
+        }
+        return stringMap;
     }
 
     showMap(){
-        console.log(this.#scriptsMap);
+        let stringedMap = "";
+        
+        stringedMap = this.#mapStringer(this.#scriptsMap);
+        
+        return stringedMap;
     }
 
-    listScripts(){
-        console.log(this.#scriptNames);
-    }
-    
 }
-
-a = new Scriptloader();
-a.listScripts();
 
 module.exports = Scriptloader;

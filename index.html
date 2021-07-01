@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ScriptStash!</title>
+        <title>scriptsta.sh</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -10,44 +10,49 @@
     <body>
         <div class="container-fluid bodyclass">
             <div class="row justify-content-center bannerrow">
-                <div class="col-6 my-auto text-center">
-                    <h1>ScriptStash!</h1>
+                <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 col-xs-12 my-auto text-center">
+                    <h1>ScriptSta.sh</h1>
                 </div>
             </div>
             <div class="row justify-content-center contentrow">
-                <div class="col-md-6 col-sm-12 contentbody">
+                <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 col-xs-12 contentbody">
                     > Tired of Downloading and Installing untrusted shell scrtips all the time?<br>
-                    > Do you want to just get things done?<br>
-                    > You have come to the right place!
+                    > No Dependencies! No Installation!<br>
+                    > Curated Shell Scripts for ASCII Art, Utilities, Enumeration etc.<br>
+                    > More to come!
                 </div>
             </div>
             <div class="row justify-content-center contentrow">
-                <div class="col-6 contentbody">
-                    [ How to Use ]<br>
-                    > List all scripts<br>
-
-                    > Read Script Manual<br>
-                    
-                    > Method 1 - Custom Manual Commands<br>
+                <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 col-xs-12 contentbody">
+                    <h4><b>[ How to Use ]</b></h4>
+                    > Method 1 - Manual Method<br>
                     <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li><b>list -</b>
+                            <p>wget -q -O - "https://scriptstash.herokuapp.com/list"</p>
+                        </li>
+                        <li><b>run -</b>
+                            <p>wget -q -O - "https://scriptstash.herokuapp.com/s/[ script path ]" | bash -s [param1] [param2] ...</p>
+                        </li>
                     </ul>
-
                     > Method 2 - One script to end 'em all!<br>
+                    > Download this ( <a href="/scriptstash.sh">link to readymade script</a> ) <br>
                     <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li><b>Add executable permission: </b>
+                            <p>chmod +x scriptsta.sh </p>
+                        </li>
                     </ul>
-
+                    <ul>
+                        <li><b>list -</b>
+                            <p>./scriptsta.sh list</p>
+                        </li>
+                        <li><b>run -</b>
+                            <p>./scriptsta.sh [script_name] [param1] [param2] ...</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="row justify-content-center contentrow">
-                <div class="col-6 contentbody">
+                <div class="col-xl-6 col-lg-8 col-md-12 col-sm-12 col-xs-12 contentbody">
                    Made with &hearts; by ShreyasLolage
                 </div>
             </div>

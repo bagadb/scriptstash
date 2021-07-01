@@ -10,8 +10,6 @@ let api = express();
 
 const port = 5500;
 
-api.set('base', __dirname);
-
 api.use(favicon(path.join(__dirname, 'assets', 'favicon.png')));
 
 api.get('/',(req, res) => {
@@ -21,12 +19,27 @@ api.get('/',(req, res) => {
 });
 
 api.get('/s/:scriptname' , (req, res) => {
-    req.params.scriptname += ".sh";
-    res.send(scriptloader.findScript(req.params.scriptname));
+
+    let query = req.params.scriptname += ".sh";
+    myResponse = scriptloader.getScript(query).toString();
+        
+    res.send(myResponse);
 
     res.status(200);
     res.end();
 });
+
+
+api.get('/list', (req, res) => {
+    res.send(scriptloader.showMap());
+    res.status(200);
+    res.end();
+})
+
+
+api.get('/scriptstash.sh', (req, res) => {
+    res.sendFile(__dirname + "/scriptstash.sh");
+})
 
 api.get("*", (req, res) => {
     res.sendFile(__dirname + req.path);
